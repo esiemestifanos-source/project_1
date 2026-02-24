@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GEARSOULS | Shop</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+  <a href="index.html" class="brand">
+    <img src="img/0000.jpeg" class="brand-logo" alt="GearSouls">
+    <span class="brand-text">GEARSOULS</span>
+  </a>
+  <nav class="nav">
+    <a href="index.html" class="nav-link">HOME</a>
+    <a href="shop.html" class="nav-link active">SHOP</a>
+    <a href="account.html" class="nav-link">ACCOUNT</a>
+  </nav>
+  <div class="menu-toggle">
+    <i class="fas fa-bars"></i>
+  </div>
+</header>
+
+<!-- ================= SHOP ================= -->
+<section class="shop-section">
+  <div class="shop-header">
+    <h1 class="shop-title">THE SHOP</h1>
+    <p class="shop-subtitle">Limited pieces. Eternal style.</p>
+  </div>
+  
+  <!-- SHOPIFY PRODUCTS CONTAINER -->
+  <div class="shopify-container">
+    <div id="product-1"></div>
+    <div id="product-2"></div>
+    <div id="product-component-1771470615559"></div>
+    <div id="product-component-1771472196044"></div>
+    <div id="product-component-1771472237564"></div>
+  </div>
+</section>
+
+<!-- ================= NOTIFICATION ================= -->
+<div class="shop-notification">
+  <i class="fas fa-check"></i>
+  <span></span>
+</div>
+
+<!-- ================= SCROLL TOP ================= -->
+<div class="scroll-top">
+  <i class="fas fa-arrow-up"></i>
+</div>
+
+<!-- SHOPIFY SCRIPT -->
+<script>
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) ShopifyBuyInit();
+    else loadScript();
+  } else loadScript();
+
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.head || document.body).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'shgx4k-wb.myshopify.com',
+      storefrontAccessToken: '68f1ddeff53ca07083b438c92837d296',
+    });
+
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      // Product 1
+      ui.createComponent("product", {
+        id: "10743198351624",
+        node: document.getElementById("product-1"),
+        moneyFormat: "€{{amount_with_comma_separator}}",
+        options: { 
+          product: { 
+            text: { button: "ADD TO CART" },
+            styles: {
+              button: {
+                "background-color": "#ffffff",
+                "color": "#000000",
+                "border-radius": "0",
+                "font-family": "inherit",
+                "letter-spacing": "2px",
+                "font-size": "12px"
+              }
+            }
+          } 
+        }
+      });
+
+      // Product 2
+      ui.createComponent("product", {
+        id: "10760158773512",
+        node: document.getElementById("product-2"),
+        moneyFormat: "€{{amount_with_comma_separator}}",
+        options: { 
+          product: { 
+            text: { button: "ADD TO CART" },
+            styles: {
+              button: {
+                "background-color": "#ffffff",
+                "color": "#000000",
+                "border-radius": "0",
+                "font-family": "inherit",
+                "letter-spacing": "2px",
+                "font-size": "12px"
+              }
+            }
+          } 
+        }
+      });
+
+      // Product 3
+      ui.createComponent("product", {
+        id: "10761169862920",
+        node: document.getElementById("product-component-1771470615559"),
+        moneyFormat: "€{{amount_with_comma_separator}}",
+        options: { 
+          product: { 
+            text: { button: "ADD TO CART" },
+            styles: {
+              button: {
+                "background-color": "#ffffff",
+                "color": "#000000",
+                "border-radius": "0",
+                "font-family": "inherit",
+                "letter-spacing": "2px",
+                "font-size": "12px"
+              }
+            }
+          } 
+        }
+      });
+
+      // Product 4
+      ui.createComponent("product", {
+        id: "10761230024968",
+        node: document.getElementById("product-component-1771472196044"),
+        moneyFormat: "€{{amount_with_comma_separator}}",
+        options: { 
+          product: { 
+            text: { button: "ADD TO CART" },
+            styles: {
+              button: {
+                "background-color": "#ffffff",
+                "color": "#000000",
+                "border-radius": "0",
+                "font-family": "inherit",
+                "letter-spacing": "2px",
+                "font-size": "12px"
+              }
+            }
+          } 
+        }
+      });
+
+      // Product 5
+      ui.createComponent("product", {
+        id: "10761255387400",
+        node: document.getElementById("product-component-1771472237564"),
+        moneyFormat: "€{{amount_with_comma_separator}}",
+        options: { 
+          product: { 
+            text: { button: "ADD TO CART" },
+            styles: {
+              button: {
+                "background-color": "#ffffff",
+                "color": "#000000",
+                "border-radius": "0",
+                "font-family": "inherit",
+                "letter-spacing": "2px",
+                "font-size": "12px"
+              }
+            }
+          } 
+        }
+      });
+    });
+  }
+})();
+</script>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
