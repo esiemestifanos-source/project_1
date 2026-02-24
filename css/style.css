@@ -2734,3 +2734,417 @@ p { font-size: clamp(1rem, 2vw, 1.2rem); }
   text-transform: uppercase;
   margin-top: 20px;
 }
+/* ===== MOBILE OPTIMIZED SHOP LAYOUT ===== */
+
+/* Main container */
+.shopify-container {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding: 20px 15px !important;
+}
+
+/* Individual product card */
+.shopify-buy__product {
+  width: 100% !important;
+  margin: 0 !important;
+  background: #111 !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 0 !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Product layout - horizontal on mobile */
+@media (max-width: 600px) {
+  .shopify-buy__product {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 15px !important;
+    padding: 10px !important;
+  }
+  
+  /* Image container */
+  .shopify-buy__product__image {
+    width: 100px !important;
+    height: 120px !important;
+    min-width: 100px !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+  }
+  
+  .shopify-buy__product__image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+  
+  /* Content area */
+  .shopify-buy__product__content {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+  }
+  
+  /* Title */
+  .shopify-buy__product__title {
+    font-size: 0.9rem !important;
+    letter-spacing: 1px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  
+  /* Price */
+  .shopify-buy__product__price {
+    font-size: 1rem !important;
+    padding: 0 !important;
+    margin: 0 0 5px 0 !important;
+  }
+  
+  /* Button */
+  .shopify-buy__btn {
+    width: auto !important;
+    min-width: 100px !important;
+    padding: 8px 12px !important;
+    margin: 0 !important;
+    font-size: 0.7rem !important;
+    letter-spacing: 1px !important;
+  }
+  
+  /* Hide quantity selector on mobile */
+  .shopify-buy__quantity {
+    display: none !important;
+  }
+  
+  /* Shop header */
+  .shop-header {
+    padding: 20px 15px !important;
+  }
+  
+  .shop-title {
+    font-size: 2rem !important;
+    letter-spacing: 4px !important;
+  }
+  
+  .shop-subtitle {
+    font-size: 0.8rem !important;
+    letter-spacing: 2px !important;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 400px) {
+  .shopify-buy__product {
+    gap: 10px !important;
+    padding: 8px !important;
+  }
+  
+  .shopify-buy__product__image {
+    width: 80px !important;
+    height: 100px !important;
+    min-width: 80px !important;
+  }
+  
+  .shopify-buy__btn {
+    min-width: 80px !important;
+    padding: 6px 8px !important;
+    font-size: 0.65rem !important;
+  }
+  
+  .shopify-buy__product__title {
+    font-size: 0.8rem !important;
+  }
+  
+  .shopify-buy__product__price {
+    font-size: 0.9rem !important;
+  }
+}
+/* ===== FORCED MOBILE FIX - OVERRIDES EVERYTHING ===== */
+
+@media (max-width: 768px) {
+  /* Force container to stack properly */
+  .shopify-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    padding: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* Force each product card */
+  .shopify-buy__product,
+  div[id^="product-"],
+  div[id^="product-component-"] {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 0 15px 0 !important;
+    padding: 15px !important;
+    background: #111 !important;
+    border: 1px solid #333 !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Reset all Shopify default styles */
+  .shopify-buy__product *,
+  div[id^="product-"] *,
+  div[id^="product-component-"] * {
+    box-sizing: border-box !important;
+  }
+  
+  /* Force images to be visible and proper size */
+  .shopify-buy__product img,
+  div[id^="product-"] img,
+  div[id^="product-component-"] img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 300px !important;
+    object-fit: cover !important;
+    margin: 0 0 15px 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  /* Force product info to stack */
+  .shopify-buy__product__title,
+  .shopify-buy__product__price,
+  .shopify-buy__product__variant-title {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 0 10px 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Force button to look good */
+  .shopify-buy__btn {
+    display: block !important;
+    width: 100% !important;
+    padding: 15px !important;
+    background: transparent !important;
+    color: #fff !important;
+    border: 1px solid #c9b698 !important;
+    font-size: 14px !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    cursor: pointer !important;
+    margin-top: 10px !important;
+  }
+  
+  .shopify-buy__btn:hover {
+    background: #c9b698 !important;
+    color: #000 !important;
+  }
+  
+  /* Hide quantity selector */
+  .shopify-buy__quantity {
+    display: none !important;
+  }
+  
+  /* Fix any extra Shopify elements */
+  .shopify-buy__product__variant-selectors,
+  .shopify-buy__product__variant-group {
+    margin-bottom: 10px !important;
+  }
+  
+  /* Make sure text is visible */
+  .shopify-buy__product__title {
+    font-size: 16px !important;
+    font-weight: bold !important;
+    color: #fff !important;
+  }
+  
+  .shopify-buy__product__price {
+    font-size: 18px !important;
+    color: #c9b698 !important;
+  }
+}
+
+/* Even smaller phones */
+@media (max-width: 480px) {
+  .shopify-buy__product img {
+    max-height: 250px !important;
+  }
+}
+/* ===== SIDE BY SIDE IMAGES ON MOBILE ===== */
+
+/* For Shop page products */
+@media (max-width: 600px) {
+  .shopify-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    padding: 10px !important;
+  }
+  
+  .shopify-buy__product,
+  #product-1, #product-2,
+  #product-component-1771470615559,
+  #product-component-1771472196044,
+  #product-component-1771472237564 {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  
+  .shopify-buy__product__image {
+    width: 100% !important;
+    aspect-ratio: 1/1 !important;
+  }
+  
+  .shopify-buy__product__title {
+    font-size: 0.8rem !important;
+    padding: 8px 5px 2px !important;
+  }
+  
+  .shopify-buy__product__price {
+    font-size: 0.9rem !important;
+    padding: 0 5px 8px !important;
+  }
+  
+  .shopify-buy__btn {
+    width: calc(100% - 10px) !important;
+    margin: 0 5px 10px !important;
+    padding: 8px !important;
+    font-size: 0.7rem !important;
+  }
+}
+
+/* For Home page product cards */
+@media (max-width: 600px) {
+  .collection-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    padding: 10px !important;
+  }
+  
+  .product-card {
+    margin: 0 !important;
+  }
+  
+  .product-image {
+    aspect-ratio: 1/1 !important;
+  }
+  
+  .product-name {
+    font-size: 0.8rem !important;
+    padding: 5px 5px 0 !important;
+  }
+  
+  .product-price {
+    font-size: 0.9rem !important;
+    padding: 0 5px 8px !important;
+  }
+  
+  .product-description {
+    display: none !important; /* Hide description on mobile to save space */
+  }
+}
+/* ===== HOME PAGE - SIDE BY SIDE ON MOBILE ===== */
+
+@media (max-width: 600px) {
+  /* Collection grid - products side by side */
+  .collection-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    padding: 10px !important;
+  }
+  
+  /* Product cards */
+  .product-card {
+    margin: 0 !important;
+    width: 100% !important;
+  }
+  
+  /* Product images - square on mobile */
+  .product-image {
+    aspect-ratio: 1/1 !important;
+    width: 100% !important;
+  }
+  
+  .product-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+  
+  /* Product info - simplified for mobile */
+  .product-info {
+    padding: 8px 5px !important;
+  }
+  
+  .product-name {
+    font-size: 0.8rem !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 2px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  
+  .product-price {
+    font-size: 0.9rem !important;
+    color: #c9b698 !important;
+  }
+  
+  /* Hide description on mobile to save space */
+  .product-description {
+    display: none !important;
+  }
+  
+  .product-category {
+    font-size: 0.6rem !important;
+    margin-bottom: 2px !important;
+  }
+  
+  /* Hero section adjustment */
+  .collection-hero {
+    height: 50vh !important;
+    margin-bottom: 0 !important;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem !important;
+  }
+  
+  /* Drop banner */
+  .drop-banner {
+    margin: 0 10px 20px !important;
+    padding: 15px !important;
+  }
+  
+  .drop-banner-left {
+    font-size: 1.2rem !important;
+  }
+  
+  .drop-banner-right {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* Even smaller phones */
+@media (max-width: 400px) {
+  .collection-grid {
+    gap: 8px !important;
+    padding: 8px !important;
+  }
+  
+  .product-name {
+    font-size: 0.7rem !important;
+  }
+  
+  .product-price {
+    font-size: 0.8rem !important;
+  }
+  
+  .hero-title {
+    font-size: 2rem !important;
+  }
+}
